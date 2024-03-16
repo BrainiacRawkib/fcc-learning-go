@@ -19,6 +19,10 @@ func main() {
 	fmt.Printf("\n")
 	pointerStruct2()
 
+	// pointerStruct3
+	fmt.Printf("\n")
+	pointerStruct3()
+
 	// pointerArray
 	fmt.Printf("\n")
 	pointerArray()
@@ -74,6 +78,16 @@ func pointerStruct2() {
 	ms.foo = 43
 	fmt.Println(ms)     // &{43}
 	fmt.Println(ms.foo) // 43
+}
+
+func pointerStruct3() {
+	fmt.Printf("*** pointerStruct3 ***\n")
+	var ms *myStruct
+	ms = new(myStruct)
+	fmt.Println(ms)
+	(*ms).foo = 43
+	fmt.Println(ms)        // &{43}
+	fmt.Println((*ms).foo) // 43
 }
 
 func pointerArray() {
